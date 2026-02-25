@@ -1072,18 +1072,38 @@ tr:hover td {
 }
 
 /* ===================================
-   Responsive — Tablet
+   Responsive — Tablet & Mobile (≤1100px)
+   Hamburger + ẩn sidebar
    =================================== */
 @media (max-width: 1100px) {
-    :root {
-        --sidebar-width: 260px;
+    /* Hiện nút hamburger */
+    #mobileMenuToggle {
+        display: flex;
     }
 
-    .hero,
-    .content-section {
-        padding: 44px 40px;
+    /* Ẩn sidebar ra ngoài màn hình, chỉ hiện khi .active */
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 100;
+        width: 300px;
     }
 
+    .sidebar.active {
+        transform: translateX(0);
+        box-shadow: 6px 0 32px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Xóa khoảng trống sidebar khỏi main content */
+    .main-content {
+        margin-left: 0;
+    }
+
+    .site-footer {
+        margin-left: 0;
+    }
+
+    /* Điều chỉnh typography */
     .hero-title {
         font-size: 42px;
     }
@@ -1094,38 +1114,19 @@ tr:hover td {
 }
 
 /* ===================================
-   Responsive — Mobile
+   Responsive — Mobile (≤768px)
    =================================== */
 @media (max-width: 768px) {
-    #mobileMenuToggle {
-        display: flex;
-    }
-
-    .sidebar {
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        z-index: 100;
-        width: 280px;
-    }
-
-    .sidebar.active {
-        transform: translateX(0);
-    }
-
-    .main-content {
-        margin-left: 0;
-    }
-
-    .site-footer {
-        margin-left: 0;
-    }
-
     .hero {
         padding: 72px 24px 40px;
     }
 
     .hero-title {
         font-size: 34px;
+    }
+
+    .hero-sub {
+        font-size: 14px;
     }
 
     .content-section {
@@ -1166,6 +1167,11 @@ tr:hover td {
 
     .site-footer {
         padding: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .download-buttons {
         flex-direction: column;
         align-items: flex-start;
     }

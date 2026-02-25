@@ -174,7 +174,7 @@
     // ===================================
 
     const handleResize = debounce(function() {
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 1100) {
             closeMobileMenu();
         }
     }, 250);
