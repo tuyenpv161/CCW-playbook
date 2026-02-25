@@ -4,7 +4,7 @@ Hướng dẫn thương hiệu chính thức của **Cleveland Cycle Werks Vietn
 
 ## Xem Playbook
 
-Mở file `index.html` trong trình duyệt để xem toàn bộ playbook.
+Mở file [playbook này](https://tuyenpv161.github.io/CCW-playbook/) để xem toàn bộ playbook.
 
 ## Nội dung
 
